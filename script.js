@@ -13,7 +13,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
+// variable asking for password criteria
 function generatePassword() {
 var charLength = window.prompt ("How many characters would you like in your password?");
 console.log (charLength);
@@ -30,6 +30,7 @@ console.log (numbers);
 var specialChar = window.confirm ("Would you like special characters in your password?");
 console.log (specialChar);
 
+//if statements to create password based on user input
 if (lowerCase) {
   selectedArray = selectedArray.concat(lowerCasedCharacters);
 }
@@ -45,13 +46,14 @@ if (specialChar) {
 
 var passwordString = "";
 
+// for loop to randomly select characters out of array
 for (var i = 0; i < charLength; i++) {
   passwordString += selectedArray[Math.floor(Math.random() * (selectedArray.length))];
 }
 
 return passwordString;
 }
-
+// arrays for different characters
 var upperCasedCharacters = [
   'A',
   'B',
@@ -139,5 +141,3 @@ var specialCharacters = [
 ];
 
 var selectedArray = [];
-
-var Characters = upperCasedCharacters.concat(lowerCasedCharacters, numericCharacters, specialCharacters)
